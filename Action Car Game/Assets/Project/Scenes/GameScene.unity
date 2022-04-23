@@ -1790,6 +1790,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Raider
       objectReference: {fileID: 0}
+    - target: {fileID: 2909375081136353329, guid: 8a340ea9f3ced9c46a917372c1be8013, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2909375081136353330, guid: 8a340ea9f3ced9c46a917372c1be8013, type: 3}
       propertyPath: m_RootOrder
       value: 2
