@@ -4,22 +4,27 @@ using UnityEngine;
 
 public class Selector : MonoBehaviour
 {
-	[SerializeField] GameObject[] cars;
-	[SerializeField] GameObject[] weapons;
-
-	[SerializeField] int currentCarIndex;
-	[SerializeField] int currentWeaponIndex;
-
-	[SerializeField] GameObject activeCar;
+	[SerializeField] CarSelectionUIManager carSelectionUIManager;
 
 	private void Start() {
+		carSelectionUIManager.OnShowNextCar += ShowNextCar;
+		carSelectionUIManager.OnShowPreviousCar += ShowPreviousCar;
+		carSelectionUIManager.OnShowNextWeapon += ShowNextWeapon;
+		carSelectionUIManager.OnShowPreviousWeapon += ShowPreviousWeapon;
+		carSelectionUIManager.OnShowNextTimeLimit += ShowNextTimeLimit;
+		carSelectionUIManager.OnShowPreviousTimeLimit += ShowPreviousTimeLimit;
+
 		ShowThisCar(currentCarIndex);
 		ShowThisWeapon(currentWeaponIndex);
+		TimerCheck();
 	}
 
 	#region Cars
 
-	public void ShowNextCar() {
+	[SerializeField] int currentCarIndex;
+	[SerializeField] GameObject activeCar;
+
+	private void ShowNextCar() {
 		if(currentCarIndex == transform.childCount - 1 ) {
 			currentCarIndex = 0;
 		} else {
@@ -28,7 +33,7 @@ public class Selector : MonoBehaviour
 		ShowThisCar(currentCarIndex);
 	}
 
-	public void ShowPreviousCar() {
+	private void ShowPreviousCar() {
 		if(currentCarIndex == 0 ) {
 			currentCarIndex = transform.childCount - 1;
 		} else {
@@ -41,14 +46,16 @@ public class Selector : MonoBehaviour
 		for(int i = 0; i < transform.childCount; i++) {
 			transform.GetChild(i).gameObject.SetActive(i == index);
 		}
-		GetActiveCar();
+		activeCar = FindObjectOfType<CarStat>().gameObject;
 	}
 
 	#endregion
 
 	#region Weapons
 
-	public void ShowNextWeapon() {
+	[SerializeField] int currentWeaponIndex;
+
+	private void ShowNextWeapon() {
 		if(currentWeaponIndex == activeCar.transform.GetChild(1).childCount - 1 ) {
 			currentWeaponIndex = 0;
 		} else {
@@ -57,7 +64,7 @@ public class Selector : MonoBehaviour
 		ShowThisWeapon(currentWeaponIndex);
 	}
 
-	public void ShowPreviousWeapon() {
+	private void ShowPreviousWeapon() {
 		if(currentWeaponIndex == 0 ) {
 			currentWeaponIndex = activeCar.transform.GetChild(1).childCount - 1;
 		} else {
@@ -72,11 +79,67 @@ public class Selector : MonoBehaviour
 		}
 	}
 
-	private void GetActiveCar() {
-		activeCar = FindObjectOfType<CarStat>().gameObject;
-	}
+
 
 	#endregion
 
+	#region TimeLimit
+
+	[SerializeField] int count;
+
+	private enum TimeLimits {
+		NoLimit,
+		HalfMinute,
+		FullMinute
+	}
+
+	private TimeLimits timer;
+
+	private void ShowNextTimeLimit() {
+		if(count < 2) {
+			count +=1;
+			timer++;
+			TimerCheck();
+		}
+	}
+
+	private void ShowPreviousTimeLimit() {
+		if(count > 0) {
+			count -= 1;
+			timer--;
+			TimerCheck();
+		}
+	}
+
+	private void TimerCheck() {
+		switch (timer)
+		{
+			case TimeLimits.NoLimit:
+				print("No Limit");
+				break;
+			case TimeLimits.HalfMinute:
+				print("Half Minute");
+				break;
+			case TimeLimits.FullMinute:
+				print("Full Minute");
+				break;
+			default:
+				print("No Limit");
+				break;
+		}
+	}
+
+
+	#endregion
+
+
+private void OnDestroy() {
+	carSelectionUIManager.OnShowNextCar -= ShowNextCar;
+	carSelectionUIManager.OnShowPreviousCar -= ShowPreviousCar;
+	carSelectionUIManager.OnShowNextWeapon -= ShowNextWeapon;
+	carSelectionUIManager.OnShowPreviousWeapon -= ShowPreviousWeapon;
+	carSelectionUIManager.OnShowNextTimeLimit -= ShowNextTimeLimit;
+	carSelectionUIManager.OnShowPreviousTimeLimit -= ShowPreviousTimeLimit;
+}
 
 }
