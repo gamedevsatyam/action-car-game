@@ -142,8 +142,14 @@ public class Selector : MonoBehaviour
 
 	#endregion
 
+public void SaveData() {
+	PlayerCarData.instance.carName = carName;
+	PlayerCarData.instance.weaponName = weaponName;
+	PlayerCarData.instance.timeLimit =timeLimit;
+}
 
 private void OnDestroy() {
+	SaveData();
 	carSelectionUIManager.OnShowNextCar -= ShowNextCar;
 	carSelectionUIManager.OnShowPreviousCar -= ShowPreviousCar;
 	carSelectionUIManager.OnShowNextWeapon -= ShowNextWeapon;
