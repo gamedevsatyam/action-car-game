@@ -6,6 +6,10 @@ public class Selector : MonoBehaviour
 {
 	[SerializeField] CarSelectionUIManager carSelectionUIManager;
 
+	[SerializeField] string carName;
+	[SerializeField] string weaponName;
+	[SerializeField] string timeLimit;
+
 	private void Start() {
 		carSelectionUIManager.OnShowNextCar += ShowNextCar;
 		carSelectionUIManager.OnShowPreviousCar += ShowPreviousCar;
@@ -47,6 +51,8 @@ public class Selector : MonoBehaviour
 			transform.GetChild(i).gameObject.SetActive(i == index);
 		}
 		activeCar = FindObjectOfType<CarStat>().gameObject;
+		carName = activeCar.name;
+		ShowThisWeapon(currentWeaponIndex);
 	}
 
 	#endregion
@@ -54,6 +60,7 @@ public class Selector : MonoBehaviour
 	#region Weapons
 
 	[SerializeField] int currentWeaponIndex;
+	[SerializeField] GameObject activeWeapon;
 
 	private void ShowNextWeapon() {
 		if(currentWeaponIndex == activeCar.transform.GetChild(1).childCount - 1 ) {
@@ -77,6 +84,8 @@ public class Selector : MonoBehaviour
 		for(int i = 0; i < activeCar.transform.GetChild(1).childCount; i++) {
 			activeCar.transform.GetChild(1).GetChild(i).gameObject.SetActive(i == index);
 		}
+		activeWeapon = FindObjectOfType<WeaponStat>().gameObject;
+		weaponName = activeWeapon.name;
 	}
 
 
@@ -115,18 +124,19 @@ public class Selector : MonoBehaviour
 		switch (timer)
 		{
 			case TimeLimits.NoLimit:
-				print("No Limit");
+				timeLimit = "No Limit";
 				break;
 			case TimeLimits.HalfMinute:
-				print("Half Minute");
+				timeLimit = "30 Seconds";
 				break;
 			case TimeLimits.FullMinute:
-				print("Full Minute");
+				timeLimit = "60 Seconds";
 				break;
 			default:
-				print("No Limit");
+				timeLimit = "No Limit";
 				break;
 		}
+
 	}
 
 

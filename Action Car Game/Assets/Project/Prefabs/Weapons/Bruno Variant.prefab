@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1952270399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508166854350472754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2676a6e0eed2e7f48a87f1e074f2e620, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: Bruno
+  damage: 3
 --- !u!1001 &507730483628132918
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9,7 +23,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1844020694928388, guid: 44602d20a6f1e45029f84a8732bacada, type: 3}
       propertyPath: m_Name
-      value: Bruno
+      value: Bruno Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4287272667531108, guid: 44602d20a6f1e45029f84a8732bacada, type: 3}
       propertyPath: m_RootOrder
@@ -57,3 +71,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44602d20a6f1e45029f84a8732bacada, type: 3}
+--- !u!1 &508166854350472754 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1844020694928388, guid: 44602d20a6f1e45029f84a8732bacada, type: 3}
+  m_PrefabInstance: {fileID: 507730483628132918}
+  m_PrefabAsset: {fileID: 0}

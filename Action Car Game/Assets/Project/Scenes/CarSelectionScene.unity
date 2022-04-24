@@ -1200,8 +1200,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2022,6 +2022,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carSelectionUIManager: {fileID: 1619746486}
+  carName: 
+  weaponName: 
+  timeLimit: 
   currentCarIndex: 0
   activeCar: {fileID: 0}
   currentWeaponIndex: 0
@@ -2855,7 +2858,7 @@ GameObject:
   - component: {fileID: 1188845799}
   - component: {fileID: 1188845798}
   m_Layer: 5
-  m_Name: SelectText
+  m_Name: ModifyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3069,7 +3072,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4675488290966673951, guid: eefda76fedfb0bc4b9a904adb9a26e7a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4675488290966674016, guid: eefda76fedfb0bc4b9a904adb9a26e7a, type: 3}
       propertyPath: m_RootOrder
@@ -3344,7 +3347,7 @@ GameObject:
   - component: {fileID: 1404379281}
   - component: {fileID: 1404379280}
   m_Layer: 5
-  m_Name: Select
+  m_Name: ModifyMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3582,6 +3585,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d3158a9fe6f9144db85166cf1ce4ddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carName: {fileID: 1699551641}
+  weaponName: {fileID: 2120047770}
+  timeLimit: {fileID: 453112080}
 --- !u!4 &1619746487
 Transform:
   m_ObjectHideFlags: 0
@@ -3818,8 +3824,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4695,8 +4701,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
