@@ -863,6 +863,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hummer
       objectReference: {fileID: 0}
+    - target: {fileID: 3780378118724778357, guid: 7276dda9f1f62f444b062aabc8077671, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7276dda9f1f62f444b062aabc8077671, type: 3}
 --- !u!1 &413541958

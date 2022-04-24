@@ -11,7 +11,13 @@ public class PlayerController : MonoBehaviour
 	private bool isAccelerating;
 	[SerializeField] float acceleration, maxSpeed, turnStrength, force;
 
+	public GameObject playerWeapon;
+	public GameObject playerCar;
+
+
+
 	private void Start() {
+		GetPlayerData();
 		carRigidbody.transform.parent = null;
 		acceleration = 3;
 		// maxSpeed = 1200;
@@ -56,6 +62,21 @@ public class PlayerController : MonoBehaviour
 			Vector3 rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * turnStrength).eulerAngles;
 			if(force > 0) {
 				transform.rotation = Quaternion.Euler(0, rotation.y, 0);
+			}
+		}
+	}
+
+	private void GetPlayerData() {
+		for (int i = 0; i < transform.childCount - 1; i++) {
+			if (transform.GetChild(i).gameObject.name == PlayerCarData.instance.carName) {
+				playerCar = transform.GetChild(i).gameObject;
+				playerCar.SetActive(true);
+				for (int j = 0; j < playerCar.transform.GetChild(1).childCount; j++) {
+					if(playerCar.transform.GetChild(1).GetChild(j).gameObject.name == PlayerCarData.instance.weaponName) {
+						playerWeapon = playerCar.transform.GetChild(1).GetChild(j).gameObject;
+						playerWeapon.SetActive(true);
+					}
+				}
 			}
 		}
 	}
