@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carName: Hummer
-  maxHp: 70
+  maxHp: 80
   maxSpeed: 15000
   handling: 0.8
 --- !u!1 &3780378119003337611

@@ -601,7 +601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carName: Kaiju
-  maxHp: 80
+  maxHp: 60
   maxSpeed: 18000
   handling: 1
 --- !u!1001 &1291141169

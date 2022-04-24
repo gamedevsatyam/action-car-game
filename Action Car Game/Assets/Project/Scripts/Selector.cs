@@ -17,6 +17,7 @@ public class Selector : MonoBehaviour
 		carSelectionUIManager.OnShowPreviousWeapon += ShowPreviousWeapon;
 		carSelectionUIManager.OnShowNextTimeLimit += ShowNextTimeLimit;
 		carSelectionUIManager.OnShowPreviousTimeLimit += ShowPreviousTimeLimit;
+		carSelectionUIManager.OnSaveData += SaveData;
 
 		ShowThisCar(currentCarIndex);
 		ShowThisWeapon(currentWeaponIndex);
@@ -136,6 +137,7 @@ public class Selector : MonoBehaviour
 				timeLimit = "No Limit";
 				break;
 		}
+		
 
 	}
 
