@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - PlayerBullet
+  - EnemyBullet
+  - Crate
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -11,10 +16,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Rigibody
+  - PlayerBullet
+  - EnemyBullet
   - 
   - 
   - 

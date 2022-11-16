@@ -12,7 +12,12 @@ public class PlayerCarData : MonoBehaviour
 	public string timeLimit;
 
   private void Awake() {
-		instance = this;
 		DontDestroyOnLoad(this);
+
+		if(instance == null) {
+			instance = this;
+		} else  {
+			Destroy(gameObject);
+		}
 	}
 }

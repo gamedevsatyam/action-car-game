@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2139081770
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2139081771}
+  m_Layer: 0
+  m_Name: BulletPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2139081771
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139081770}
+  m_LocalRotation: {x: -1.3189042e-13, y: 0.000004857778, z: 0.000000012261802, w: 1}
+  m_LocalPosition: {x: 0, y: 0.01, z: 0.052}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2687995446492911774}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1026528623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13,7 +43,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Caser
+  maxAmmo: 20
+  fireRate: 1
   damage: 10
+  critRate: 0
+  bulletPoint: {fileID: 2139081770}
+  bullet: {fileID: 8858955831715853096, guid: 37fff72a5b8945d43a86a064f2c2f2bd, type: 3}
 --- !u!1001 &2684976384910289128
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74,5 +109,10 @@ PrefabInstance:
 --- !u!1 &2685377884467734862 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1850747301937574, guid: 8eff7f36b041d404894eeec711e7cf8a, type: 3}
+  m_PrefabInstance: {fileID: 2684976384910289128}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2687995446492911774 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4325848495698038, guid: 8eff7f36b041d404894eeec711e7cf8a, type: 3}
   m_PrefabInstance: {fileID: 2684976384910289128}
   m_PrefabAsset: {fileID: 0}
